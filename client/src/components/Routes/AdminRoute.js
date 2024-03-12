@@ -5,7 +5,7 @@ import axios from "axios";
 import Spinner from "../Spinner";
 
 export default function AdminRoute(){
-    const [ok, setOk] = useState(false);
+    const [ok, setOk] = useState(true);
     const [auth, setAuth] = useAuth();
 
     
@@ -15,9 +15,9 @@ export default function AdminRoute(){
             try{
             const res = await axios.get("/api/v1/auth/admin-auth");
             if(res.data.ok){
-                setOk(true);
-            }else{
                 setOk(false);
+            }else{
+                setOk(true);
             } 
         }catch(e){console.log(e)};
         
@@ -28,4 +28,4 @@ export default function AdminRoute(){
 
     return ok ? <Outlet /> : <Spinner path=""/>;
 
-}
+};

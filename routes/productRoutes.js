@@ -4,7 +4,7 @@ import { createProductController, deleteProductController, getProductController,
 import formidable from 'express-formidable';
 
 
-const router =express.Router();
+const router = express.Router();
 
 //routes
 router.post('/create-product',requireSignIn, isAdmin, formidable(),createProductController);
