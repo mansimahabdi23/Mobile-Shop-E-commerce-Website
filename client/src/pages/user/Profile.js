@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import Layout from '../../components/Layout/Layout';
-import UserMenu from '../../components/Layout/UserMenu';
-import { useAuth } from '../../context/auth';
+import Layout from '../../components/Layout/Layout.js';
+import UserMenu from '../../components/Layout/UserMenu.js';
+import { useAuth } from '../../context/auth.js';
 import toast from 'react-hot-toast';
 import axios from 'axios';
 
@@ -29,8 +29,18 @@ const Profile = () => {
    const handleSubmit = async(e) =>{
     e.preventDefault();
     try {
-      const res = await axios.post('/api/v1/auth/register',
+      const {data} = await axios.put('/api/v1/auth/profile',
         {name,email,password,phone,address});
+        if(data?.error){
+          toast.error(data?.error);
+        }else{
+          setAuth({...auth, user: data?.updatedUser });
+          let ls = localStorage.getItem("auth");
+          ls=JSON.parse(ls);
+          ls.user = data.updatedUser;
+          localStorage.setItem("auth", JSON.stringify(ls));
+          toast.success('Profile Updated Successfully');
+        }
      
     } catch (error) {
       console.log(error);
@@ -59,7 +69,7 @@ const Profile = () => {
                     className="form-control" 
                     id="exampleInputName"
                     placeholder='Enter your Name'
-                    required 
+                     
                     autoFocus
                   />
               </div>
@@ -72,7 +82,7 @@ const Profile = () => {
               className="form-control" 
               id="exampleInputEmail"
               placeholder='Enter your Email' 
-              required
+              
               disabled
               />
             </div>
@@ -85,7 +95,7 @@ const Profile = () => {
             className="form-control" 
             id="exampleInputPassword"
             placeholder='Enter your Password' 
-            required />
+             />
           </div>
 
           <div className="mb-3">
@@ -96,7 +106,7 @@ const Profile = () => {
             className="form-control" 
             id="exampleInputPhone"
             placeholder='Enter your Phone Number' 
-            required />
+             />
           
           </div>
 
@@ -108,7 +118,7 @@ const Profile = () => {
             className="form-control" 
             id="exampleInputAddress" 
             placeholder='Enter your Address'
-            required />
+             />
           </div>
 
           
