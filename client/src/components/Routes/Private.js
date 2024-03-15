@@ -5,7 +5,7 @@ import axios from "axios";
 import Spinner from "../Spinner";
 
 export default function PrivateRoute(){
-    const [ok,setOk] = useState(true);
+    const [ok,setOk] = useState(false);
     const [auth, setAuth] = useAuth();
 
     useEffect(() => {
@@ -13,9 +13,9 @@ export default function PrivateRoute(){
             try{
             const res = await axios.get("/api/v1/auth/user-auth");
             if(res.data.ok){
-                setOk(false);
-            }else{
                 setOk(true);
+            }else{
+                setOk(false);
             }
         }catch(e){console.log(e)}
         };

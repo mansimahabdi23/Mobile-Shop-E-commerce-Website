@@ -62,6 +62,7 @@ const HomePage = () => {
     if (page === 1) return;
     loadMore();
   }, [page]);
+
   //load more
   const loadMore = async () => {
     try {
