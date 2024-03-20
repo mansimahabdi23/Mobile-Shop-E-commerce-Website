@@ -8,6 +8,14 @@ import categoryRoutes from './routes/categoryRoutes.js';
 import productRoutes from './routes/productRoutes.js';
 import cors from 'cors';
 
+
+
+let corsAllow = {
+  origin: "http://localhost:3000",
+  methods: "PUT, GET, POST, PATCH, DELETE, HEAD",
+  credentials: true,
+};
+
 //configure env
 dotenv.config();
 
@@ -20,7 +28,7 @@ const app=express();
 
 
 //middlewares
-app.use(cors());
+app.use(cors(corsAllow));
 app.use(express.json());
 app.use(morgan('dev'));
 

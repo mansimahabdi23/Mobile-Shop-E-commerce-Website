@@ -17,7 +17,7 @@ const Profile = () => {
   const [address,setAddress] = useState("");
 
   //get user data during initial time
-  useEffect(()=>{
+  useEffect(() => {
       const {name, email, phone, address} = auth?.user; 
       setName(name);
       setPhone(phone);

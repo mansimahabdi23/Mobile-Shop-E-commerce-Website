@@ -3,6 +3,8 @@ import Layout from '../components/Layout/Layout.js';
 import { useCart } from '../context/cart.js';
 import { useAuth } from '../context/auth.js';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import toast from 'react-hot-toast';
 
 const CartPage = () => {
   const [cart, setCart] = useCart();

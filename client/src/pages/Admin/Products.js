@@ -49,7 +49,7 @@ useEffect(() => {
             </div>
         </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default Products
+export default Products;
