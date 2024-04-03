@@ -8,7 +8,7 @@ import moment from 'moment';
 const Orders = () => {
   const [orders, setOrders] = useState([]);
   const [auth, setAuth] = useAuth();
-   const getOrders = async()=>{
+   const getOrders = async() => {
     try {
       const {data} = await axios.get('/api/v1/auth/orders');
       setOrders(data);
@@ -25,7 +25,7 @@ const Orders = () => {
 
   return (
     <Layout title={'Your Orders'}>
-        <div className='container-fluid p-3 m-3'>
+        <div className='container-fluid p-3 m-3 m-3 dashboard'>
             <div className='row'>
                 <div className='col-md-3'>
                 <UserMenu/>
@@ -39,29 +39,29 @@ const Orders = () => {
                         <table className='table'>
                           <thead>
                             <tr>
-                              <td scope='col'>#</td>
-                              <td scope='col'>Status</td>
-                              <td scope='col'>Buyer</td>
-                              <td scope='col'>Date</td>
-                              <td scope='col'>Payment</td>
-                              <td scope='col'>Quantity</td>
+                              <th scope='col'>#</th>
+                              <th scope='col'>Status</th>
+                              <th scope='col'>Buyer</th>
+                              <th scope='col'>Date</th>
+                              <th scope='col'>Payment</th>
+                              <th scope='col'>Quantity</th>
                             </tr>
                           </thead>
                           <tbody>
                             <tr>
-                              <th>{i + 1}</th>
-                              <th>{o?.status}</th>
-                              <th>{o?.buyer?.name}</th>
-                              <th>{moment(o?.createAt).fromNow()}</th>
-                              <th>{o?.payment.success ? "Success" : "Failed" }</th>
-                              <th>{o?.products?.length}</th>
+                              <td>{i + 1}</td>
+                              <td>{o?.status}</td>
+                              <td>{o?.buyer?.name}</td>
+                              <td>{moment(o?.createAt).fromNow()}</td>
+                              <td>{o?.payment.success ? "Success" : "Failed" }</td>
+                              <td>{o?.products?.length}</td>
                             </tr>
                           </tbody>
                         </table>
                         <div className='container'>
                         {
                             o?.products?.map((p,i) => (
-                        <div className='row mb-2 card flex-row p-3'>
+                        <div className='row mb-2 card flex-row p-3'key={p._id}>
                           <div className='col-md-4'>
                           <img src={`/api/v1/products/product-photo/${p._id}`} className="card-img-top" alt={p.name}
                           width={"100px"}
@@ -83,7 +83,7 @@ const Orders = () => {
                 }
                         </div>
                       </div>
-                    )
+                    );
                   })
                 }
               </div>
