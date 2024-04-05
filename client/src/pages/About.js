@@ -15,12 +15,18 @@ const About = () => {
         </div>
         <div className="col-md-4">
           <p className="text-justify mt-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-            officiis obcaecati esse tempore unde ratione, eveniet mollitia,
-            perferendis eius temporibus dicta blanditiis doloremque explicabo
-            quasi sunt vero optio cum aperiam vel consectetur! Laborum enim
-            accusantium atque, excepturi sapiente amet! Tenetur ducimus aut
-            commodi illum quidem neque tempora nam.
+          <b>Sai Mobiles was found in 2021.</b>
+Sai Mobiles is an Indian Mobiles and Services shop which sells mobile devices and mobile
+accessories. They are just like other local shops which is not much popular but its sales are
+growing nowadays due to their business strategy as well as selling mobile phones by using
+services like EMI and 0 down payment with offers and discounts.
+<br></br>
+Currently, Sai Mobiles has opened its another branch of their shop in the same area as that
+of their previous shop.
+<br></br><br></br><br></br>
+Sai Mobiles registered address is:<br></br>
+𖡡 At Post Mohopada, Near Auto Stand, Tal. Khalapur, Dist.
+Raigarh-410206 Maharashtra.
           </p>
         </div>
       </div>

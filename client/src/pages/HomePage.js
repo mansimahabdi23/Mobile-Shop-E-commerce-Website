@@ -6,7 +6,8 @@ import { Prices } from '../components/Prices.js';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/cart.js';
 import toast from 'react-hot-toast';
-
+import "../styles/HomePage.css";
+import { AiOutlineReload } from "react-icons/ai";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -107,44 +108,80 @@ const HomePage = () => {
     }
   };
 
+  
+
+
   return (
+    
+
+
+
     <Layout title={'All Products-Best Offers'}>
-      <div className='container-fluid row mt-3'>
-        <div className='col-md-2'>
-          <h4 className='text-center'>Filter By Category</h4>
-          <div className='d-flex flex-column'>
-          {categories?.map((c) => (
-            <Checkbox
-             key={c._id}
-             onChange={(e) => handleFilter(e.target.checked,c._id)}>
-              {c.name}
-            </Checkbox>
-          ))}
+      
+ <div id="carouselExampleIndicators" className="carousel slide">
+  <div className="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to={0} className="active" aria-current="true" aria-label="Slide 1" />
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to={1} aria-label="Slide 2" />
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to={2} aria-label="Slide 3" />
+  </div>
+  <div className="carousel-inner">
+    <div className="carousel-item active">
+      <img src="images/banner1.jpg" className="d-block w-100" alt="..." />
+    </div>
+    <div className="carousel-item">
+      <img src="images/banner2.jpg" className="d-block w-100" alt="..." />
+    </div>
+    <div className="carousel-item">
+      <img src="images/banner3.jpg" className="d-block w-100" alt="..." />
+    </div>
+  </div>
+  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span className="carousel-control-prev-icon" aria-hidden="true" />
+    <span className="visually-hidden">Previous</span>
+  </button>
+  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span className="carousel-control-next-icon" aria-hidden="true" />
+    <span className="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+<div className="container-fluid row mt-3 home-page">
+        <div className="col-md-3 filters">
+          <h4 className="text-center">Filter By Category</h4>
+          <div className="d-flex flex-column">
+            {categories?.map((c) => (
+              <Checkbox
+                key={c._id}
+                onChange={(e) => handleFilter(e.target.checked, c._id)}
+              >
+                {c.name}
+              </Checkbox>
+            ))}
           </div>
 
          {/* price filter*/} 
-          <h4 className='text-center mt-4'>Filter By Price</h4>
-          <div className='d-flex flex-column'>
+         <h4 className="text-center mt-4">Filter By Price</h4>
+          <div className="d-flex flex-column">
             <Radio.Group onChange={(e) => setRadio(e.target.value)}>
               {Prices?.map((p) => (
                 <div key={p._id}>
-                   <Radio value={p.array}>{p.name}</Radio>
+                  <Radio value={p.array}>{p.name}</Radio>
                 </div>
-               
               ))}
             </Radio.Group>
           </div>
           
-          <div className='d-flex flex-column'>
-            <button className='btn btn-danger'
-             onClick={()=>
-              window.location.reload()
-            }>
+          <div className="d-flex flex-column">
+            <button
+              className="btn btn-danger"
+              onClick={() => window.location.reload()}
+            >
               RESET FILTERS
             </button>
           </div>
         </div>
-        <div className='col-md-9 offset-1'>
+        <div className='col-md-9'>
           <h1 className='text-center'>All Products</h1>
           <div className='d-flex flex-wrap'>
           {products?.map((p) => (
@@ -153,16 +190,36 @@ const HomePage = () => {
                         <img src={`api/v1/products/product-photo/${p._id}`} className="card-img-top" alt={p.name} />
                             <div className="card-body">
                             <h5 className="card-title">{p.name}</h5>
-                            <p className="card-text">{p.description.substring(0, 30)}...
-                            </p>
-                            <p className="card-text"> ₹ {p.price}</p>
-                            <button  className="btn btn-primary ms-1" onClick={() => navigate(`/products/${p.slug}`)}>More Details</button>
-                            <button  className="btn btn-secondary ms-1" onClick={() =>{ setCart([...cart, p]);
-                            localStorage.setItem('cart', JSON.stringify([...cart, p]));
-                            toast.success("Item added to cart");
-                            }}>Add to Cart</button>
-
-                             </div>
+          
+                            <h5 className="card-title card-price">{p.price.toLocaleString("en-US", {
+                        style: "currency",
+                        currency: "USD",
+                      })}  </h5>
+                      </div>
+                      <p className="card-text ">
+                        {p.description.substring(0, 60)}...
+                      </p>
+                      <div className="card-name-price">
+                        <button
+                          className="btn btn-info ms-1"
+                          onClick={() => navigate(`/products/${p.slug}`)}
+                        >
+                          More Details
+                        </button>
+                        <button
+                          className="btn btn-dark ms-1"
+                          onClick={() => {
+                            setCart([...cart, p]);
+                            localStorage.setItem(
+                              "cart",
+                              JSON.stringify([...cart, p])
+                            );
+                            toast.success("Item Added to cart");
+                          }}
+                        >
+                          ADD TO CART
+                        </button>
+                      </div>
                      </div>
                  
                 ))}
@@ -175,7 +232,14 @@ const HomePage = () => {
                   e.preventDefault();
                   setPage(page + 1);
                 }}>
-                  {loading ? "Loading...." : "Loadmore"}
+                  {loading ? (
+                  "Loading ..."
+                ) : (
+                  <>
+                    {" "}
+                    Loadmore <AiOutlineReload />
+                  </>
+                )}
                 </button>
               )}
           </div>

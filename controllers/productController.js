@@ -333,6 +333,8 @@ export const deleteProductController = async(req,res) => {
         });
       }
  };
+
+ //braintree gateway api
 export const  braintreeTokenController = async(req,res) => {
     try {
         gateway.clientToken.generate({}, function (err, response) {
