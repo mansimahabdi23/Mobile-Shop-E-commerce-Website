@@ -9,7 +9,7 @@ export default function PrivateRoute(){
     const [auth, setAuth] = useAuth();
 
     useEffect(() => {
-        const authCheck = async () => {
+        const authCheck = async (req,res) => {
             try{
             const res = await axios.get("/api/v1/auth/user-auth");
             if(res.data.ok){
