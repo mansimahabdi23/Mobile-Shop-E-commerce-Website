@@ -45,6 +45,7 @@ router.get("/orders", requireSignIn, getOrdersController);
 //all orders
 router.get("/all-orders", requireSignIn, isAdmin, getAllOrdersController);
 
+<<<<<<< Updated upstream
 // order status update
 router.put(
   "/order-status/:orderId",
@@ -52,5 +53,9 @@ router.put(
   isAdmin,
   orderStatusController
 );
+=======
+//order status update
+router.put("/router-status/:orderId",requireSignIn, isAdmin, orderStatusController);
+>>>>>>> Stashed changes
 
 export default router;
