@@ -10,8 +10,8 @@ const Contact = () => {
     <Layout title={'Contact-Us'}>
       <div className='title'>Feel Free to Contact Us</div>
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d236.1155778661144!2d73.18025788800757!3d18.896756136930748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7e790815f198d%3A0x9869361deb5fb042!2sRasayani%20Auto%20Rikshaw%20Stand!5e0!3m2!1sen!2sin!4v1712335689663!5m2!1sen!2sin" 
-    width={1500} 
-    height={300}
+    width={1520} 
+    height={500}
      style={{border: 0}}
       allowFullScreen loading="lazy"
        referrerPolicy="no-referrer-when-downgrade" />

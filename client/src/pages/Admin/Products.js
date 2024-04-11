@@ -4,6 +4,7 @@ import Layout from './../../components/Layout/Layout.js';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import "../../styles/AdminProducts.css";
 
 const Products = () => {
     const [products,setProducts] = useState([]);
@@ -32,10 +33,10 @@ useEffect(() => {
             </div>
             <div className='col-md-9'>
                 <h1 className='text-center'>All Products List</h1>
-                <div className='d-flex flex-wrap'>
+                <div className='card-container d-flex flex-wrap'>
                 {products?.map((p) => (
                    <Link key={p._id} to={`/dashboard/admin/products/${p.slug}`} className='product-link'>
-                   <div className="card md-2" style={{width: '15rem'}}>
+                   <div className="card md-2" style={{width: '300px',height:"550px"}}>
                         <img src={`/api/v1/products/product-photo/${p._id}`} className="card-img-top" alt={p.name} />
                             <div className="card-body">
                             <h5 className="card-title">{p.name}</h5>

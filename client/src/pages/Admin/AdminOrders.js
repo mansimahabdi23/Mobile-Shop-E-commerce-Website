@@ -6,8 +6,8 @@ import Layout from "../../components/Layout/Layout";
 import { useAuth } from "../../context/auth";
 import moment from "moment";
 import { Select } from "antd";
-const { Option } = Select;
 
+const { Option } = Select;
 const AdminOrders = () => {
   const [status, setStatus] = useState([
     "Not Process",
@@ -90,19 +90,19 @@ const AdminOrders = () => {
                 <div className="container">
                   {o?.products?.map((p, i) => (
                     <div className="row mb-2 p-3 card flex-row" key={p._id}>
-                      <div className="col-md-4">
+                      <div className="card col-md-4">
                         <img
                           src={`/api/v1/products/product-photo/${p._id}`}
                           className="card-img-top"
                           alt={p.name}
-                          width="100px"
+                          width={"500px"}
                           height={"100px"}
                         />
                       </div>
                       <div className="col-md-8">
-                        <p>{p.name}</p>
+                        <p >{p.name}</p>
                         <p>{p.description.substring(0, 30)}</p>
-                        <p>Price : {p.price}</p>
+                        <p>Price : ${p.price}</p>
                       </div>
                     </div>
                   ))}

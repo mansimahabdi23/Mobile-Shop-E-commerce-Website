@@ -8,6 +8,8 @@ import { useCart } from '../context/cart.js';
 import toast from 'react-hot-toast';
 import "../styles/HomePage.css";
 import { AiOutlineReload } from "react-icons/ai";
+import { Link } from "react-router-dom";
+
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -130,6 +132,7 @@ const HomePage = () => {
     </div>
     <div className="carousel-item">
       <img src="images/banner2.jpg" className="d-block w-100" alt="..." />
+     
     </div>
     <div className="carousel-item">
       <img src="images/banner3.jpg" className="d-block w-100" alt="..." />
