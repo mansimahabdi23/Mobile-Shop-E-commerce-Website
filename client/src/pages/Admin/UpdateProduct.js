@@ -22,6 +22,8 @@ const UpdateProduct = () => {
     const[photo,setPhoto] = useState("");
     const [id,setId] = useState("");
   
+
+  
 //get single product
 const getSingleProduct= async () => {
     try {
@@ -32,7 +34,8 @@ const getSingleProduct= async () => {
         setPrice(data.product.price);   
         setCategory(data.product.category._id);   
         setQuantity(data.product.quantity);   
-        setShipping(data.product.shipping);        
+        setShipping(data.product.shipping);  
+          
     } catch (error) {
         console.log(error);
 
@@ -198,7 +201,8 @@ const handleDelete = async() => {
        onChange={(e) => setQuantity(e.target.value)}
        />
   </div>
-
+  
+  </div>
   <div className='mb-3'>
     <Select bordered={false}
     placeholder="Select Shipping"
@@ -225,7 +229,7 @@ const handleDelete = async() => {
 </div>
     </div> 
   </div>
-</div>
+
 
 </Layout>
   );

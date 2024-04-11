@@ -16,6 +16,7 @@ const CreateProduct = () => {
   const[quantity,setQuantity] = useState("");
   const[shipping,setShipping] = useState("");
   const[photo,setPhoto] = useState("");
+  const[deal,setDeal] = useState("");
 
 //get all categories
 const getAllCategory = async() => {
@@ -45,6 +46,7 @@ const handleCreate = async(e) => {
     productData.append("quantity",quantity);
     productData.append("shipping",shipping);
     productData.append("photo",photo);
+    productData.append("deal",deal)
 
     const {data} = axios.post('/api/v1/products/create-product', productData);
     if (data?.success) {
@@ -142,7 +144,14 @@ const handleCreate = async(e) => {
            onChange={(e) => setQuantity(e.target.value)}
            />
       </div>
-
+      <div className='mb-3'>
+        <input type='number'
+         value={deal}
+          placeholder='Price of the deal'
+           className='form-control' 
+           onChange={(e) => setDeal(e.target.value)}
+           />
+      </div>
       <div className='mb-3'>
         <Select bordered={false}
         placeholder="Select Shipping"
