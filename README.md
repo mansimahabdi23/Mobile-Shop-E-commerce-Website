@@ -1,11 +1,16 @@
-📱 Sai Mobiles E-Commerce Website
+# Sai Mobiles E-Commerce Website - A Sponsored Project
+
 Sponsored Project built for a real mobile store, Sai Mobiles, which sells smartphones from various brands. This is a fully functional e-commerce platform with both user-facing features and an admin dashboard, implemented using the MERN stack.
 
 🚀 Tech Stack
 Frontend: React.js, Bootstrap
+
 Backend: Node.js, Express.js
+
 Database: MongoDB (NoSQL)
+
 Payment Gateway: Braintree (Dummy Payment Integration)
+
 Forms : Formspree
 
 🔑 Features
