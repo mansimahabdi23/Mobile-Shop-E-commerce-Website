@@ -84,6 +84,17 @@ JWT_SECRET=your_jwt_secret
 npm start      # in /client
 npm run dev    # in /server
 
+### 👩‍💻 Contributor
+
+
+| Name              | Role                 | GitHub Profile                                       |
+| ----------------- | -------------------- | ---------------------------------------------------- |
+| **Mansi Mahabdi** | Full Stack Developer | [@mansimahabdi23](https://github.com/mansimahabdi23) |
+| **Parul Bhople**  | Front End Developer  | [@005parul](https://github.com/005parul)             |
+| **Kelina Vipu**   | Back End Developer   | [@kelinavipu](https://github.com/kelinavipu)         |
+
+
+
 📸 Screenshots
 ![homepage1](https://github.com/user-attachments/assets/48b8d0ae-7136-42cb-901e-835f3be829b5)
 ![productpage](https://github.com/user-attachments/assets/7b7f1032-538f-4be4-b300-7a250ee183d0)
