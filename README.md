@@ -14,19 +14,31 @@ Payment Gateway: Braintree (Dummy Payment Integration)
 Forms : Formspree
 
 🔑 Features
+
 🛒 User Side
+
 User registration & login with authentication
+
 Browse mobile phones by brand & price
+
 Product search and filters
+
 Add to cart & remove from cart
+
 Checkout process with dummy payment using Braintree
+
 View similar products on product detail page
+
 Contact Us page with Formspree
 
 🔧 Admin Side
+
 Admin login & secure dashboard
+
 Add new products
+
 Update existing product details
+
 Delete products from inventory
 
 📂 Folder Structure
