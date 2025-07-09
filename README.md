@@ -42,13 +42,21 @@ Update existing product details
 Delete products from inventory
 
 📂 Folder Structure
+
 /
+
 ├── client/         # React frontend
+
 ├── server/         # Express backend
+
 ├── config/         # MongoDB & Braintree config
+
 ├── controllers/    # Backend logic
+
 ├── models/         # MongoDB schemas
+
 ├── routes/         # Express API routes
+
 ├── README.md       # Project overview
 
 ⚙️ How to Run Locally
