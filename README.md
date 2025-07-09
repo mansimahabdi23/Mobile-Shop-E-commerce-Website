@@ -93,6 +93,11 @@ npm run dev    # in /server
 | **Parul Bhople**  | Front End Developer  | [@005parul](https://github.com/005parul)             |
 | **Kelina Vipu**   | Back End Developer   | [@kelinavipu](https://github.com/kelinavipu)         |
 
+### 🙋‍♀️ Author
+**Mansi Mahabdi**
+B.Tech CSE (AI), VIIT Pune
+[Github](@mansimahabdi23) | [LinkedIn](https://www.linkedin.com/in/mansi-mahabdi-218b832b7/)
+
 
 
 📸 Screenshots
